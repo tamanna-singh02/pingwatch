@@ -1,0 +1,20 @@
+{
+  "name": "pingwatch",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:server": "pnpm --filter @pingwatch/server dev",
+    "dev:client": "pnpm --filter @pingwatch/client dev",
+    "dev:api": "pnpm --filter @pingwatch/server dev",
+    "dev:web": "pnpm --filter @pingwatch/client dev",
+    "db:generate": "pnpm --filter @pingwatch/database generate",
+    "db:migrate": "pnpm --filter @pingwatch/database migrate",
+    "db:studio": "pnpm --filter @pingwatch/database studio",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down"
+  }
+}
